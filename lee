@@ -151,33 +151,37 @@ o	Explanation: Pulls the Ubuntu 16.04 image from the Docker Hub registry.
 o	Explanation: Pushes the image named "myimage" to the Docker Hub registry.
 
 8th selenium
-const { Builder, By, until } = require("selenium-webdriver");
-
-const assert = require("assert");
-
-async function loginTest() 
+const {By,Key,Builder} = require("selenium-webdriver");
+require("chromedriver");
+ 
+async function example()
 {
-  
-  let driver = await new Builder().forBrowser("chrome").build();
-  try 
-  {
-    
-    await driver.get("https://test-login-app.vercel.app/");
-    
-    await driver.findElement(By.id("email")).sendKeys("Mojesh@021.com");
-   
-    await driver.findElement(By.id("password")).sendKeys("Anonymous");
-    
-    await driver.findElement(By.name("login")).click();
-    
-  
-  }
-  finally 
-  {
-  // await driver.quit();
-  }
+ 
+       var searchString = "Automation testing with Selenium";
+       
+ 
+      
+       let driver = await new Builder().forBrowser("chrome").build();
+ 
+       
+        await driver.get("http://google.com");
+            
+        
+        await driver.findElement(By.name("q")).sendKeys(searchString,Key.RETURN);
+        
+
+ 
+        //Verify the page title and print it
+        var title = await driver.getTitle();
+        console.log('Title is:',title);
+        console.log("Test case 1 Passed");
+        
+        
+        await driver.quit();
+ 
 }
-loginTest();
+
+example();
 
 paste this code in notepad ans save as filename.js
 then cmd 
