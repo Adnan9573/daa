@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+</head>
+<body>
+<form id="registrationForm">
+    <label for="fullName">Full Name:</label><br>
+    <input type="text" id="fullName" name="fullName" required><br>
+   <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="password">password:</label><br>
+    <input type="password" id="password" name="password" required><br>
+     <br>
+    <input type="submit" value="Register">
+</form>
+<div id="successMessage" style="display: none;">
+    <p>Registration Successful!</p>
+</div>
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        document.getElementById("successMessage").style.display = "block";
+        document.getElementById("registrationForm").reset();
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+Git
+Git init
+Git add nithin.html
+Git status
+Go to git hub
+Create new repository
+Git config —global user.email “adnanshaik5057@gmail.com
+Git config —global user.name”Adnan9573”
+Git status
+Git commit -m “comiting”
+Git remote add origin “reponame”
+Git push -u origin master
+
+
+2nd 
+
+git commands
+
+3rd ..
+
+4th 
+this pc > windows > program data > jenkins > jenkins > secrets
+
+5th 
+pipeline
+{
+    agent any
+    stages
+    {
+        stage("Hello"){
+            steps{
+                echo "Red Signal !"
+            }
+        }
+        stage("Bye"){
+            steps{
+                echo "Yellow Signal  !"
+            }
+        }
+        stage("Good Bye"){
+            steps{
+                echo "Green Signal"
+            }
+        }
+    }
+}
